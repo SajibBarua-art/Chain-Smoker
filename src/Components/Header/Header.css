@@ -1,4 +1,14 @@
 .website-name-style {
     font-weight: 900;
     font-size: 25px !important;
+    color:rgb(4, 189, 4) !important;
+}
+.nav-option {
+    color: white;
+    margin: 0 20px;
+    font-weight: 700;
+}
+.nav-option:hover {
+    text-decoration: none;
+    color: lightgrey;
 }
