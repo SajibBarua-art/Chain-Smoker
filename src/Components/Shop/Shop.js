@@ -13,7 +13,7 @@ const Shop = () => {
     return (
         <div className="d-flex flex-wrap justify-content-center">
             {
-                products.map(product => <Product product={product} key={product.id}></Product>)
+                products.map(product => <Product product={product} key={product._id}></Product>)
             }
         </div>
         

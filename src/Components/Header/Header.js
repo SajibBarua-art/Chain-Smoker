@@ -13,7 +13,6 @@ const Header = () => {
                     <Link className="nav-option" to="/shop">Home</Link>
                     <Link className="nav-option" to="/orders">Orders</Link>
                     <Link className="nav-option" to="/admin">Admin</Link>
-                    <Link className="nav-option" to="/">Deals</Link>
                 </Nav>
                 <Link to="/login"><Button variant="success">Login</Button></Link>
             </Navbar.Collapse>

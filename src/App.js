@@ -10,6 +10,8 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Orders from './Components/Orders/Orders';
 import Login from './Components/Login/Login';
 import { createContext, useState } from 'react';
+import Checkout from './Components/Checkout/Checkout';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 export const UserContext = createContext();
 
@@ -30,6 +32,9 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
+          <PrivateRoute path="/checkout/:id">
+            <Checkout></Checkout>
+          </PrivateRoute>
           <PrivateRoute path="/orders">
             <Orders></Orders>
           </PrivateRoute>
