@@ -1,7 +1,5 @@
-import React, { useContext, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../App';
 import './Product.css';
 
 const Product = ({ product }) => {
