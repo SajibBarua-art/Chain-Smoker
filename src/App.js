@@ -12,6 +12,8 @@ import Login from './Components/Login/Login';
 import { createContext, useState } from 'react';
 import Checkout from './Components/Checkout/Checkout';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import ManageProduct from './Components/ManageProduct/ManageProduct';
+import AddProduct from './Components/AddProduct/AddProduct';
 
 export const UserContext = createContext();
 
@@ -38,8 +40,20 @@ function App() {
           <PrivateRoute path="/orders">
             <Orders></Orders>
           </PrivateRoute>
+
+          <Route path='/admin' exact>
+            <AddProduct></AddProduct>
+          </Route>
+          <Route path='/addProduct'>
+            <AddProduct></AddProduct>
+          </Route>
+          <Route path='/manageProduct'>
+            <ManageProduct></ManageProduct>
+          </Route>
+          
         </Switch>
       </Router>
+
     </UserContext.Provider>
   );
 }

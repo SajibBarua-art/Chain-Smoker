@@ -1,18 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../App';
-import OrderDetails from '../OrderDetails/OrderDetails';
+import React, { useEffect, useState } from 'react';
+import AdminNavbar from '../AdminNavbar/AdminNavbar';
+import ProductDetails from '../ProductDetails/ProductDetails';
 
-const Orders = () => {
-    const [userState] = useContext(UserContext);
-    const [ordersProduct, setOrdersProduct] = useState([]);
-    const email = userState.email;
-    useEffect(() => {
-        fetch('http://localhost:5000/client/' + email)
-            .then(res => res.json())
-            .then(data => setOrdersProduct(data))
-    }, [email])
+const ManageProduct = () => {
+    const [products, setProducts] = useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:5000/products')
+        .then(res => res.json())
+        .then(data => setProducts(data));
+    },[])
     return (
         <div>
+            <AdminNavbar></AdminNavbar>
             <h3 className='mt-4'>All Orders: </h3>
             <div className="container">
                 <div className="row bg-dark text-white p-2 pt-3 mb-3 rounded">
@@ -32,11 +31,11 @@ const Orders = () => {
             </div>
             <div className="mb-5">
                 {
-                    ordersProduct.map(product => <OrderDetails product={product} key={product.orderTime}></OrderDetails>)
+                    products.map(product => <ProductDetails product={product} key={product._id}></ProductDetails>)
                 }
             </div>
         </div>
     );
 };
 
-export default Orders;
+export default ManageProduct;
