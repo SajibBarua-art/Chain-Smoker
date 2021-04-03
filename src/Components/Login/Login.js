@@ -32,9 +32,12 @@ const Login = () => {
 
     return (
         <div className='d-flex justify-content-center my-5'>
-            <button className='login-btn' onClick={handleGoogleSignIn}>
-                 <img className='google-icon' src={googleIcon} alt=""/> Login with Google
-            </button>
+            <div>
+                <h4 className="mb-2 rounded p-3">You have to login first</h4>
+                <button className='login-btn' onClick={handleGoogleSignIn}>
+                    <img className='google-icon' src={googleIcon} alt="" /> Login with Google
+                </button>
+            </div>
         </div>
     );
 };
