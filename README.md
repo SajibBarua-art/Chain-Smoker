@@ -9,8 +9,8 @@ Feature of this website:
 7) Responsive website
 
 All necessary website link are given below:
-client-code-link: https://github.com/Porgramming-Hero-web-course/chain-smoker
-client-site-link: https://chain-smoker.web.app
+1) client-code-link: https://github.com/Porgramming-Hero-web-course/chain-smoker
+2) client-site-link: https://chain-smoker.web.app
 
-server-code-link: https://github.com/Porgramming-Hero-web-course/chain-smoker-server
-server-site-link: https://chain-smoker.herokuapp.com/
+3) server-code-link: https://github.com/Porgramming-Hero-web-course/chain-smoker-server
+4) server-site-link: https://chain-smoker.herokuapp.com/
