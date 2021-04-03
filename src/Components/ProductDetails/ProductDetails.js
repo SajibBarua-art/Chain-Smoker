@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 const ProductDetails = ({ product }) => {
     const [isVisible, setIsVisible] = useState(true);
     const deleteProduct = (id) => {
-        fetch(`http://localhost:5000/delete/product/${id}`, {
+        fetch(`https://chain-smoker.herokuapp.com/delete/product/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

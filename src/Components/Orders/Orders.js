@@ -9,7 +9,7 @@ const Orders = () => {
     const [isDataLoading, setIsDataLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/client/' + email)
+        fetch('https://chain-smoker.herokuapp.com/client/' + email)
             .then(res => res.json())
             .then(data => {
                 setOrdersProduct(data);

@@ -7,7 +7,7 @@ const ManageProduct = () => {
     const [isDataLoading, setIsDataLoading] = useState(true);
     
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://chain-smoker.herokuapp.com/products')
         .then(res => res.json())
         .then(data => {
             setProducts(data);

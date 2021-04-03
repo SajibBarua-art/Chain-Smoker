@@ -12,7 +12,7 @@ const Checkout = () => {
     const [isDataLoading, setIsDataLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/product/' + id)
+        fetch('https://chain-smoker.herokuapp.com/product/' + id)
             .then(res => res.json())
             .then(data => {
                 setSelectedProduct(data);
@@ -25,7 +25,7 @@ const Checkout = () => {
     console.log(orderDetails);
 
     const handleOrderNow = () => {
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://chain-smoker.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
