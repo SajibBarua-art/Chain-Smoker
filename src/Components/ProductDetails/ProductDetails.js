@@ -4,12 +4,13 @@ import { Button } from 'react-bootstrap';
 const ProductDetails = ({ product }) => {
     const [isVisible, setIsVisible] = useState(true);
     const deleteProduct = (id) => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`http://localhost:5000/delete/product/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(result => {
                 if (result) {
+                    setIsVisible(!isVisible);
                 }
             })
     }
@@ -27,7 +28,7 @@ const ProductDetails = ({ product }) => {
                         <h4>1</h4>
                     </div>
                     <div className="col-3">
-                        <h4><Button onClick={() => {deleteProduct(product._id); setIsVisible(!isVisible)}} variant="danger">Delete</Button></h4>
+                        <h4><Button onClick={() => deleteProduct(product._id)} variant="danger">Delete</Button></h4>
                     </div>
                 </div>
             }

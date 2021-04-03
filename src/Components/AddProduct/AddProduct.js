@@ -43,6 +43,7 @@ const AddProduct = () => {
     return (
         <div>
             <AdminNavbar></AdminNavbar>
+            <h3 className='my-3 ml-2'>Add a product: </h3>
             <form className='d-flex justify-content-center flex-wrap' onSubmit={handleSubmit(onSubmit)}>
                 <input name="name" defaultValue="Product Name" {...register("name")} />
                 <br />

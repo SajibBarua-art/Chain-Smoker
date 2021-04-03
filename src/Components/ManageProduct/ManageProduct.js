@@ -12,7 +12,7 @@ const ManageProduct = () => {
     return (
         <div>
             <AdminNavbar></AdminNavbar>
-            <h3 className='mt-4'>All Orders: </h3>
+            <h3 className='mt-4 ml-2'>Manage Product: </h3>
             <div className="container">
                 <div className="row bg-dark text-white p-2 pt-3 mb-3 rounded">
                     <div className="col-4">
