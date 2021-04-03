@@ -1,0 +1,11 @@
+.order-details {
+    margin: 10px 0;
+    border: 2px solid blueviolet;
+    border-radius: 8px;
+    padding: 8px;
+}
+.order-details img {
+    width: 200px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}

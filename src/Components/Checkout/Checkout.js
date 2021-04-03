@@ -4,14 +4,20 @@ import { Button } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
+import './Checkout.css';
 
 const Checkout = () => {
     const { id } = useParams();
     const [selectedProduct, setSelectedProduct] = useState({});
+    const [isDataLoading, setIsDataLoading] = useState(true);
+
     useEffect(() => {
         fetch('http://localhost:5000/product/' + id)
             .then(res => res.json())
-            .then(data => setSelectedProduct(data));
+            .then(data => {
+                setSelectedProduct(data);
+                setIsDataLoading(false);
+            });
     }, [id])
 
     const [userState] = useContext(UserContext);
@@ -26,19 +32,32 @@ const Checkout = () => {
             },
             body: JSON.stringify(orderDetails)
         })
-            .then(res => res.json())
-            .then(data => {
-                if (data) {
-                    alert('Your ordered placed successfully!');
-                }
-            })
     }
 
     return (
         <div>
-            <h3>Name: {selectedProduct.name}</h3>
-            <h3>Price: $ {selectedProduct.price}</h3>
-            <Link to='/orders'><Button onClick={handleOrderNow} variant="success">Order Now</Button></Link>
+            {
+                isDataLoading && <div className="d-flex justify-content-center my-3">
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden"></span>
+                    </div>
+                </div>
+            }
+            {
+                !isDataLoading && <div className="d-flex justify-content-center">
+                    <div className='order-details'>
+                        <div className="d-flex justify-content-center">
+                            <img src={selectedProduct.img} alt="" />
+                        </div>
+                        <h3>Product Name: {selectedProduct.name}</h3>
+                        <h3>Price: $ {selectedProduct.price}</h3>
+                        <h3>Quantity(packet): 1</h3>
+                        <div className='d-flex justify-content-end'>
+                            <Link to='/orders'><Button onClick={handleOrderNow} variant="success">Order Now</Button></Link>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     );
 };

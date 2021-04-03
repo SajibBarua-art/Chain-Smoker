@@ -4,6 +4,8 @@ import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
+import googleIcon from '../../images/googleIcon.png';
+import './Login.css';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -29,8 +31,10 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <button onClick={handleGoogleSignIn}>Login with Google</button>
+        <div className='d-flex justify-content-center my-5'>
+            <button className='login-btn' onClick={handleGoogleSignIn}>
+                 <img className='google-icon' src={googleIcon} alt=""/> Login with Google
+            </button>
         </div>
     );
 };

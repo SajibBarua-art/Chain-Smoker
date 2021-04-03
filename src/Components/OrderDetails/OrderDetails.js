@@ -18,16 +18,16 @@ const OrderDetails = ({ product }) => {
         <div className="container">
             {
                 isVisible && <div className="row bg-secondary text-white pt-2 rounded mb-1">
-                    <div className="col-4">
+                    <div className="d-flex justify-content-center col-3">
                         <h4>{product.product.name}</h4>
                     </div>
-                    <div className="col-3">
+                    <div className="d-flex justify-content-center col-3">
                         <h4>{product.product.price}</h4>
                     </div>
-                    <div className="col-2">
+                    <div className="d-flex justify-content-center col-3">
                         <h4>1</h4>
                     </div>
-                    <div className="col-3">
+                    <div className="d-flex justify-content-center col-3">
                         <h4><Button variant="danger" onClick={() => { deleteProduct(product._id) }}>Cancel Order</Button></h4>
                     </div>
                 </div>

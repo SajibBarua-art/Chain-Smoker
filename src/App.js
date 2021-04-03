@@ -21,7 +21,6 @@ function App() {
   const [userState, setUserState] = useState({});
   return (
     <UserContext.Provider value={[userState, setUserState]}>
-      <h3>email: {userState.email}</h3>
       <Router>
         <Header></Header>
         <Switch>
