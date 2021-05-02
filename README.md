@@ -1,4 +1,4 @@
-The website name is "Chain Smoker". This is a website for selling cigarete. 
+The website name is "Chain Smoker". This is a website for selling cigarette. 
 Feature of this Full-stack website:
 1) A User can log in with Google
 2) A user can add your order products
